@@ -1,0 +1,481 @@
+/* <style> */
+:root {
+    /* Colores base */
+    --color-fondo-principal: #1a1a1a;
+    --color-fondo-alterno: #121212;
+    /* Dorados */
+    --color-dorado: #D1A751;
+    --color-dorado-two: #9E762E;
+    /* Texto */
+    --color-texto-principal: #f5f5f5;
+    --color-texto-secundario: #bfbfbf;
+    /* Detalles */
+    --color-borde: #3a3a3a;
+}
+
+* {
+    text-decoration: none;
+    padding: 0;
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--color-fondo-principal);
+    color: var(--color-texto-principal);
+}
+h2{
+  font-size: 3rem;
+}
+/* NAV general */
+/* Menú único dentro del banner */
+
+.menu-unico {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
+  z-index: 11;
+  background: transparent;
+  transition: none; /* esto evita efectos indeseados en escritorio */
+  height: 6rem;
+}
+.ctnNav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 81rem;
+  width: 100%;
+}
+/* Elementos del nav */
+.menu-unico .logo {
+  width: 100px;
+}
+
+.menu-unico .enlaces {
+  display: flex;
+  gap: 6rem;
+}
+
+.menu-unico .enlaces a {
+  color: var(--color-texto-principal);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.menu-unico .enlaces a:hover {
+  color: var(--color-dorado-two);
+}
+
+.menu-unico .btn-pedido {
+  border:1px solid var(--color-dorado);
+  color: var(--color-dorado);
+  background-color: transparent;
+  padding: 0.8rem 1.6rem;
+  box-sizing: border-box;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s ease-in-out;
+}
+.menu-unico .btn-pedido:hover{
+    background-color: var(--color-dorado);
+    color: black;
+    transition: all 0.3s ease-in-out;
+}
+
+/* Botón hamburguesa */
+.hamburguesa {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  font-size: 30px;
+  color: var(--color-dorado);
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1000;
+  display: none;
+}
+.sobreMi h2{
+  color: var(--color-fondo-alterno);
+}
+
+.sobreMi .bloque{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.sobreMi .bloque .ctnTxt{
+  max-width: 500px;
+}
+/* Responsive: menú oculto y hamburguesa visible */
+
+
+
+/* BANNER */
+
+.banner {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.banner h1 {
+    font-size: 8rem;
+    line-height: 6rem;
+    background: linear-gradient(to right, #D1A751, #9E762E);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.banner h2 {
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: var(--color-dorado-two);
+}
+.banner .title{
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+.banner .alitas{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 1;
+    filter: brightness(0.4);
+}
+
+.banner .foco {
+    position: absolute;
+    top: 0; 
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 35%, rgba(0, 0, 0, 1) 95%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+
+/* bloques */
+.ctnBloque{
+  width: 100%;
+  padding: 3rem 2rem;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.bloque{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  width: 100%;
+  max-width: 81rem;
+}
+.ctnCardsProduc{
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  padding: 2rem 1rem;
+  overflow-x: auto;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+}
+.ctnCardsProduc:active{
+  cursor: grabbing;
+}
+.ctnCardsProduc .producItem .price{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 6rem;
+  z-index: 11;
+  border-radius:0 0 0 1rem;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  background: linear-gradient(to left, var(--color-dorado), var(--color-dorado-two));
+  font-weight: 500;
+  
+}
+.producItem{
+  display: flex;
+  flex: 0 0 auto;
+  padding: 2rem;
+  height: 20rem;
+  user-select: none;
+  width: 25rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 1rem #000;
+  position: relative;
+  background-color: black;
+  overflow: hidden;
+}
+.producItem img{
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+.producItem .proximamente{
+  position: absolute;
+  z-index: 10;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: black;
+}
+.producItem .itemtxt{
+  position: inherit;
+  z-index: 2;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  gap: 0.5rem;
+}
+.producItem .itemtxt h3{
+  color: var(--color-dorado);
+  text-shadow: 0 0 1rem black;
+  font-size: 1.2rem;
+}
+.nivel1{
+  padding-left: 1.1rem;
+}
+/* CARDS */
+
+/* PUNTOS */
+.dotsContainer {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin: 1rem 0 2rem;
+}
+.dot {
+    cursor: pointer;
+    width: 0.8rem;
+    height: 0.8rem;
+    border-radius: 50%;
+    background-color: var(--color-texto-secundario);
+    transition: background-color 0.3s ease;
+}
+.dot.active {
+  background-color: var(--color-dorado-two);
+}
+/* FIN DE PUNTOS */
+
+/* BLOQUE BEBIDAS*/
+.ctnBebidas{
+  gap: 5rem;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  gap: 5rem;
+  padding: 2rem 1rem;
+  overflow-x: auto;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+}
+.bebidasGeneral h2{
+  color: black;
+}
+.ctnBebidas .bebidaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.ctnBebidas .bebidaItem .ctnImg{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 10rem;
+  width: 10rem;
+  /* border: 1px solid var(--color-texto-secundario); */
+  box-shadow: 0 0 0.5rem var(--color-texto-secundario);
+  border-radius: 50%;
+  overflow: hidden;
+  padding: 0.5rem;
+  box-sizing: border-box;
+}
+.ctnBebidas .bebidaItem img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.ctnBebidas .bebidaItem .ctnTxt{
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.ctnBebidas .bebidaItem .ctnTxt .nombre{
+  font-weight: 700;
+}
+/*FIN BLOQUE BEBIDAS*/
+
+/* FOTTER */
+footer{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 2rem;
+}
+footer a{
+  color: white;
+  text-decoration: underline;
+}
+.ctnFooter{
+  max-width: 81rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  width: 100%;
+}
+.itemFooter{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.itemFooter img{
+  height: 7rem;
+}
+.itemFooter .title{
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.terminos{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  background-color: black;
+  padding: 0.7rem;
+}
+
+
+@media(max-width: 1100px) {
+  .ctnCardsProduc,.ctnBebidas{
+    position: static;
+    width: calc(100% + 4rem);
+  }
+  .ctnNav{
+    flex-direction: column;
+    gap: 3rem;
+  }
+  .menu-unico{
+    align-items: flex-start;
+    justify-content: start;
+    position: fixed;
+    top: 0;
+    right: -250px; /* comienza oculto a la derecha */
+    left: auto; /* anula el left del escritorio */
+    width: 250px;
+    height: 100%;
+    background-color: var(--color-fondo-alterno);
+    padding-top: 5rem;
+    transition: right 0.3s ease;
+    z-index: 999;
+  }
+
+  .menu-unico.menu-activo {
+    right: 0;
+  }
+
+  .menu-unico .enlaces {
+    flex-direction: column;
+    width: 100%;
+    gap: 2.5rem;
+  }
+
+  .menu-unico .enlaces a,
+  .menu-unico .pedido {
+    padding:0.5rem;
+    width: 100%;
+  }
+
+  .hamburguesa {
+    display: block;
+  }
+  
+  .sobreMi .bloque{
+    flex-direction: column;
+  }
+  .sobreMi h2{
+    text-align: center;
+  }
+  .sobreMi .bloque .ctnTxt{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+    max-width: 100%;
+  }
+  .producItem{
+    scroll-snap-align: center;
+  }
+}
+@media (max-width: 700px) {
+  .banner h1{
+    font-size: 4rem;
+  }
+  .banner h2{
+    font-size: 1rem !important;
+    text-align: center;
+    width: 80%;
+  }
+  h2{
+    font-size: 1.5rem !important;
+  }
+}
+@media(min-width: 1350px) {
+  .dotsContainer{
+    display: none !important;
+  }
+  .ctnBloque{
+    padding: 5rem 2rem !important;
+  }
+}
+/* </style> */

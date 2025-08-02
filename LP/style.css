@@ -1,0 +1,14 @@
+@media(max-width:1000px){
+    .banner{
+        min-height: 490px;
+    }
+    .ctnBloque4 .bloque4 .ctnBloques{
+        padding: 2.5rem 0 !important;
+    }
+}
+.ctnBloque1{
+    min-height: 760px;
+}
+.letrasBG{
+    height: 100%;
+}

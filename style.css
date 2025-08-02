@@ -469,6 +469,12 @@ footer a{
   h2{
     font-size: 1.5rem !important;
   }
+  .ctnFooter{
+    flex-direction: column;
+  }
+  .itemFooter{
+    gap: 0.5rem;
+  }
 }
 @media(min-width: 1350px) {
   .dotsContainer{

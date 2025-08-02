@@ -237,6 +237,7 @@ h2{
   position: relative;
   background-color: black;
   overflow: hidden;
+  max-width: 100%;
 }
 .producItem img{
   opacity: 0.5;

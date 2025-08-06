@@ -177,7 +177,7 @@ h2{
 /* bloques */
 .ctnBloque{
   width: 100%;
-  padding: 3rem 2rem;
+  padding: 3rem 5rem;
   box-sizing: border-box;
   display: flex;
   align-items: center;
@@ -308,7 +308,7 @@ h2{
   display: flex;
   justify-content: space-between;
   gap: 5rem;
-  padding: 2rem 1rem;
+  padding: 2rem;
   overflow-x: auto;
   box-sizing: border-box;
   scroll-behavior: smooth;
@@ -459,6 +459,9 @@ footer a{
   }
 }
 @media (max-width: 700px) {
+  .ctnBloque{
+    padding: 2rem 2rem;
+  }
   .banner h1{
     font-size: 4rem;
   }

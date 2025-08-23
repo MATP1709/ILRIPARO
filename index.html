@@ -128,7 +128,15 @@
         menu.classList.toggle('menu-activo');
         });
     </script>
+    <!-- MOVER SUAVE -->
+<script>
+    const boton = document.querySelector(".arrowTop"); 
+    const banner = document.querySelector(".banner");
 
+    boton.addEventListener("click", () => {
+        banner.scrollIntoView({ behavior: "smooth" });
+    });
+</script>
 </body>
 
 </html>

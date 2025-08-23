@@ -203,6 +203,7 @@ footer a{
   background-color: black;
   color: white;
   padding: 0.7rem;
+  text-align: center;
 }
 .ctnFlotantes{
     position: fixed;
@@ -363,5 +364,10 @@ footer a{
     }
     .ctnFooter{
       flex-direction: column;
+    }
+}
+@media (max-width:380px) {
+    .ctnBtn{
+        flex-direction: column;
     }
 }
